@@ -1,0 +1,47 @@
+.dashboard { max-width: 1240px; margin: auto; padding: 48px 32px; }
+.page-header { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 32px; }
+.eyebrow { color: #426285; text-transform: uppercase; letter-spacing: .14em; font-size: 12px; font-weight: 700; margin-bottom: 10px; }
+h1 { font-size: clamp(26px, 4vw, 36px); letter-spacing: -.035em; }
+.subtitle { color: #627386; margin-top: 10px; }
+.read-only { border: 1px solid #cdd9e6; border-radius: 6px; padding: 8px 12px; font-size: 12px; white-space: nowrap; color: #426285; }
+.connection-panel { display: flex; flex-wrap: wrap; gap: 20px 36px; background: #fff; border: 1px solid #dde5ef; border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; }
+.connection-panel > div { display: flex; align-items: center; gap: 12px; }
+.status-label { font-size: 13px; color: #52657b; }
+.badge { display: inline-block; font-size: 12px; font-weight: 600; border-radius: 5px; padding: 5px 9px; }
+.good { color: #126344; background: #e6f5ed; }
+.warning { color: #80540c; background: #fff2d9; }
+.neutral { color: #52657b; background: #edf1f6; }
+.notice { font-size: 14px; line-height: 1.6; border-left: 3px solid #d4a23c; background: #fff9ed; color: #775521; padding: 12px 16px; margin-bottom: 16px; border-radius: 4px; }
+.error { border-color: #c84b4b; background: #fff0f0; color: #8c3434; }
+.error p + p { margin-top: 4px; }
+.section-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin: 28px 0 16px; }
+h2 { font-size: 19px; font-weight: 650; }
+.section-header > span { font-size: 12px; color: #627386; }
+.metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.metric { background: #fff; border: 1px solid #dde5ef; border-top: 3px solid #426285; padding: 22px; border-radius: 8px; }
+.metric h3 { font-size: 13px; font-weight: 500; color: #52657b; }
+.metric-value { margin-top: 14px; font-size: 36px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.available { border-top-color: #25855b; }
+.available .metric-value { color: #18744c; }
+.occupied { border-top-color: #497cc3; }
+.reserved { border-top-color: #c3973b; }
+.unavailable { border-top-color: #9a6470; }
+.level-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.level-card { padding: 24px; background: #fff; border: 1px solid #dde5ef; border-radius: 10px; }
+.level-card h3 { display: flex; align-items: center; gap: 10px; font-size: 16px; }
+.level-icon { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 6px; background: #edf3fb; color: #426285; }
+.level-id { margin-left: auto; font-size: 11px; color: #627386; font-weight: 500; }
+.level-availability { margin-top: 24px; font-size: 30px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.level-availability span { color: #627386; font-size: 18px; font-weight: 400; }
+.muted { color: #627386; font-size: 12px; margin-top: 4px; }
+progress { display: block; width: 100%; height: 7px; margin: 18px 0; border: 0; border-radius: 8px; overflow: hidden; background: #edf1f6; accent-color: #25855b; }
+progress::-webkit-progress-bar { background: #edf1f6; }
+progress::-webkit-progress-value { background: #25855b; }
+progress::-moz-progress-bar { background: #25855b; }
+.level-details { margin: 18px 0 0; padding-top: 16px; border-top: 1px solid #edf1f6; font-size: 12px; }
+.level-details > div { display: flex; justify-content: space-between; margin-top: 9px; }
+dt { color: #627386; }
+dd { margin: 0; font-weight: 600; }
+footer { display: flex; flex-wrap: wrap; gap: 10px 24px; color: #627386; font-size: 12px; margin-top: 28px; line-height: 1.6; }
+@media (max-width: 1000px) { .metrics { grid-template-columns: repeat(3, 1fr); } .level-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .dashboard { padding: 28px 16px; } .page-header { align-items: flex-start; flex-direction: column; } .metrics { grid-template-columns: repeat(2, 1fr); } .metric { padding: 18px; } .level-grid { grid-template-columns: 1fr; } .section-header { align-items: flex-start; flex-direction: column; gap: 6px; } }
