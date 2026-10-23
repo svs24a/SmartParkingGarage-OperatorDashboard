@@ -1,5 +1,6 @@
 ﻿import { useDashboard } from './useDashboard'
 import type { DataSource, Level } from './api'
+import { CctvMonitor } from './components/CctvMonitor'
 import './App.css'
 
 const labels: Record<DataSource, string> = {
@@ -52,6 +53,7 @@ function App() {
         </article>
       })}</div>
     </section>
+    <CctvMonitor />
     <footer>
       <p>Automatic refresh · approximately every second</p>
       <p>Parking data refreshed: {lastRefresh ? lastRefresh.toLocaleTimeString() : 'Not yet'}</p>

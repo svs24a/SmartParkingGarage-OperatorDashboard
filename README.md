@@ -46,3 +46,13 @@ npm.cmd run lint
 ```
 
 Build runs TypeScript checks before writing `dist/`. `node_modules/` and `dist/` are generated folders excluded by the repository's existing Unity Version Control ignore rules. Vite's development proxy is for local development; production hosting needs its own API routing.
+
+## CCTV monitoring
+
+The CCTV Monitoring section below occupancy information lists all 14 official Unity camera IDs supplied from Hayden's CCTV_INTEGRATION.md with descriptive names. All previews are labeled placeholders; no camera image or stream requests are made.
+
+Click a tile, or focus it with Tab and press Enter or Space, to open an enlarged individual view. Select "Back to all cameras" to restore the grid. Focus moves to the back button on selection and returns to the selected tile when the grid is restored. The grid uses four columns on desktop, two on tablets, and one on phones.
+
+Camera metadata and ID types live in src/cctv.ts. src/components/CctvMonitor.tsx handles selection, while src/components/CameraPreview.tsx provides the shared placeholder renderer. Once FastAPI camera endpoints and their feed format are documented, add a dedicated camera adapter/hook and connect the shared renderer. Keep camera availability independent of occupancy polling and connectivity indicators; no endpoint paths or stream formats are assumed yet.
+
+Manual verification: confirm 14 named tiles and official IDs, open and return from individual views with mouse and keyboard, check focus restoration and narrow layouts, and confirm existing occupancy and connectivity behavior remains intact.
