@@ -1,5 +1,5 @@
 // Official Unity IDs supplied from Hayden's CCTV_INTEGRATION.md.
-// Metadata is independent of feed availability; no endpoint is assumed.
+// Keep the official camera inventory independent of backend availability.
 export const cameras = [
   { id: 'CAM_GARAGE_EXTERIOR', name: 'Garage exterior' },
   { id: 'CAM_CITY_APPROACH', name: 'City approach' },
@@ -19,3 +19,21 @@ export const cameras = [
 
 export type Camera = typeof cameras[number]
 export type CameraId = Camera['id']
+
+export type CameraHealth = 'Fresh' | 'Stale' | 'NoFrame' | 'Unavailable'
+export interface CameraMetadata {
+  camera_id: string
+  display_name: string
+  enabled: boolean
+  allow_focused?: boolean
+  description: string
+  focused?: CameraMetadata['thumbnail']
+  thumbnail: {
+    health: CameraHealth
+    sequence: number | null
+    captured_at: string | null
+    age_ms: number | null
+    width: number | null
+    height: number | null
+  }
+}
